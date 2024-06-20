@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;   /*tudo do cabecalhado estar lado a lado */
+    border-bottom: 16px solid #341f97 ;
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;
+
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+    
+}
+
+form h2{
+    margin-bottom: 16px ;
+
+}
+
+input,
+button {
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;       /*tirar a borda?? */
+    font-weight: bold;
+    text-transform: uppercase;   /*colocar o nome dentro do button em maiusculo */
+    color: #fff;
+    cursor: pointer;   /*mudar a setinha do mouse*/
+}
+
+#botao-cancelar{
+    background-color: red;
+}
+
+ul {
+    display: flex ;  /*para que as fotos fiquem uma ao lado da outra! As img precisam estar dentro do mesmo UL */
+    flex-wrap: wrap; /*para que se passar do limite da pag, que desca para a outra linha */
+}
+
+ul li{
+    max-width: 25%; /* 25% pq sao 4 itens em uma linha! mas as imgs ainda estao uma por cima da outra, precisa por o width 100% */
+    list-style: none; /*remover uma bolinha preta que estava no canto de cada img*/
+    position: relative; /*elemento pai para nao escapar?! ajeitou o link VER IMAG TAM REAL */
+    max-height: 280px; /* limitar a altura dos li */
+    overflow-y: hidden ; /*vamos cortar a img. todo conteudo que passar dos 280px n sera exibido, e as img ficarem mesmo tamanho */
+}
+
+ul li img {
+    width: 100%;  /*as imgs se ajustaram! */
+
+}
+
+.overlay-imagem-link {   /*estilizando o link */
+    padding:16px;
+    background-color: rgba(0,0,0,0.7);  /*0.7 de transparencia*/
+    position: absolute; /*posicionar no canto inferior do li */
+    bottom:0;   /*deixar na extremidade */
+    left:0;      /*igualmente*/
+    width: 100%; /*vai ter 100% de largura! */
+    opacity: 0; /*ocultar a barrinha e apenas aparecer qnd passar o mouse */
+    transition: all ease 0.5s; /*qnd passar o mouse no link, ele reaparece em 0,5 seg, suavizando. */
+}
+
+.overlay-imagem-link a {  /*aplicar cor apenas ao link */
+    color: #fff;
+    text-decoration: none ; /*remover o underline do link */
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;   /*qnd passar o mouse o link volta a aparecer */
+
+}
+
